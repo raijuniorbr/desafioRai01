@@ -1,3 +1,12 @@
+/*******
+ * 
+ * 2018-01-20
+ * Autor:	Rai
+ * Descr:	Filtro para limitar o acesso às páginas da aplicação
+ * 			Qualquw URL que for digitada irá para Login.xhtml em caso de não estar
+ * 			devidamente autenticado
+ * 
+ */
 package br.com.ironMountain.desafioRai01.service;
 
 import java.io.IOException;
@@ -20,7 +29,7 @@ import br.com.ironMountain.desafioRai01.model.IronUser;
  */
 
 /*
- * para todas as URLs do projeto
+ * Diretiva para todas as URLs do projeto
  */
 @WebFilter("/*")
 public class FilterAuth implements Filter {

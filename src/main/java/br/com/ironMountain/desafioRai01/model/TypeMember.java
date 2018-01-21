@@ -1,3 +1,9 @@
+/*******
+ * 2018-01-20
+ * Autor:	Rai
+ * Descr:	Enumeração para Tipos de Clientes
+ * 
+ */
 package br.com.ironMountain.desafioRai01.model;
 
 public enum TypeMember {

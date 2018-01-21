@@ -10,18 +10,20 @@
 
 	==============================================================================================
 -->
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core"
+<html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://java.sun.com/jsf/html"
-    template="/WEB-INF/templates/default.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:p="http://primefaces.org/ui">
-    <ui:define name="content">
-    		<h1>Desafio Iron Mountain</h1>
-        <h2>Login</h2>
-        <h:form id="form">
+<h:head>
+    <title>${artifactId}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</h:head>
+<h:body style="width: 400px;">
+	<p:panel header="Desafio Iron Mountain" style="text-align: center;">
+		<p:outputLabel value="Login" style="font-size: 2em; color: blue; font-weight: bold;"/>
+	    <h:form id="form" style="text-align: left; margin-top: 10;">
 			<p:messages autoUpdate="true" />
-			<h:panelGrid columns="2"> 
+			<h:panelGrid columns="2" style="margin-top: 10px;"> 
 				<p:outputLabel value="Usuário" for="usuario" /> 
 				<p:inputText id="usuario" size="20" value="#{ironUserController.userName}" /> 
 				<p:outputLabel value="Senha" for="senha" />
@@ -30,5 +32,12 @@
 				<p:commandButton value="Acessar" action="#{ironUserController.login}" /> 
 			</h:panelGrid>
 		</h:form>
-	</ui:define>
-</ui:composition>
+	    <div style="font-size: 0.65em; margin-top: 20px; text-align: left;" >Certamente em ambiente de produção esta dica jamais estara aqui:
+		    	<ul>
+		    		<li>Usuário:  admim </li>
+		    		<li>Senha: im2018</li>
+		    	</ul>          
+		</div>
+	</p:panel>
+</h:body>
+</html>

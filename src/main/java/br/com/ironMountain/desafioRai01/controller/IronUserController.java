@@ -1,3 +1,9 @@
+/*******
+ * 2018-01-20
+ * Autor:	Rai
+ * Descr:	Classe para controlar usuários com acesso
+ * 
+ */
 package br.com.ironMountain.desafioRai01.controller;
 
 import javax.enterprise.inject.Model;

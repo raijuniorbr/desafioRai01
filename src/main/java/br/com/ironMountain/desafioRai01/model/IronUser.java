@@ -1,11 +1,9 @@
-/*
-	==============================================================================================
-	Data: 	20/01/2017
-	Autor: 	Rai
-	Edição:	Este arquivo foi gerado automatiamente pelo Template WildFly encontrado no Maven
-			Modificado para atender especificação do DESAFIO IMB-desafio-tecnico.pdf
-
-	==============================================================================================
+/*****
+*	==============================================================================================
+*	Data: 	20/01/2017
+*	Autor: 	Rai
+*	Edição:	Classe do Usuário da Aplicação
+*	==============================================================================================
  */
 package br.com.ironMountain.desafioRai01.model;
 
