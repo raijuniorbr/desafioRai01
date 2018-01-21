@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	==============================================================================================
+	Data: 	20/01/2017
+	Autor: 	Rai
+	Edição:	Este arquivo foi gerado automatiamente pelo Template WildFly encontrado no Maven
+			Modificado para atender especificação do DESAFIO IMB-desafio-tecnico.pdf
+
+	==============================================================================================
+
+    JBoss, Home of Professional Open Source
+    Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
+    contributors by the @authors tag. See the copyright.txt in the
+    distribution for a full listing of individual contributors.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+        <h1>Desafio Iron Mountain</h1>
+        <h2>Cadastro de Clientes</h2>
+        <h:form id="form">
+   			<p:growl id="msgGrowl" showDetail="true" sticky="true" autoUpdate="true"/>
+   			
+   	        <h:panelGroup rendered="#{empty members}">
+	            <em>Sem Clientes.</em>
+	        </h:panelGroup>
+	        
+	        <p:dataTable id="dtClientes" var="_member" value="#{members}" 
+	        		rowKey="#{_member.id}"
+	            rendered="#{not empty members}"
+	            selection="#{memberController.currMember}" selectionMode="single"
+	            editable="true" editMode="row"
+	            rowStyleClass="#{!_member.memberActive ? 'memberInactive' : null}" >
+	            
+		       <p:ajax event="rowEdit" listener="#{memberController.onRowEdit}" update=":form:msgGrowl" />
+		       <p:ajax event="rowEditCancel" listener="#{memberController.onRowCancel}" update=":form:msgGrowl" />	            
+	            
+	            <p:column width="30" headerText="Ativo" sortBy="#{_member.memberActive}">
+	            		<p:selectBooleanCheckbox value="#{_member.memberActive}" disabled="true" />
+	            </p:column>
+
+	            <p:column width="40" headerText="Id">
+	            		<h:outputText value="#{_member.id}"/>
+	            </p:column>
+	            <p:column headerText="Nome" 
+	            		sortBy="#{_member.name}"
+	            		filterBy="#{_member.name}" filterMatchMode="contains" footerText="Filtro: Contendo">
+		            <p:cellEditor>
+		            	<f:facet name="output">
+		            		<h:outputText value="#{_member.name}"/> 
+		            	</f:facet>               
+		            	<f:facet name="input">
+		            		<h:inputText value="#{_member.name}"/> 
+		            	</f:facet>               
+		            </p:cellEditor>
+	            </p:column>
+	            <p:column width="160" headerText="Email"
+	            		filterBy="#{_member.name}" filterMatchMode="contains" footerText="Filtro: Contendo">
+		            <p:cellEditor>
+			            	<f:facet name="output">
+			            		<h:outputText value="#{_member.email}"/>                
+			            	</f:facet>
+			            	<f:facet name="input">
+			            		<h:inputText value="#{_member.email}"/>                
+			            	</f:facet>
+		            </p:cellEditor>
+	            </p:column>
+	            <p:column width="55" headerText="Fone #">
+		            <p:cellEditor>
+			            	<f:facet name="output">
+			            		<h:outputText value="#{_member.phoneNumber}"/>   
+			            	</f:facet>             
+			            	<f:facet name="input">
+			            		<h:inputText value="#{_member.phoneNumber}"/>   
+			            	</f:facet>             
+		            </p:cellEditor>
+	            </p:column>
+	            <p:column width="90" headerText="URL REST">
+	            		<h:outputText value=""/>
+	                <h:outputLink value="#{request.contextPath}/rest/members/#{_member.id}" target="_blank">
+		                	<h:outputFormat value="/rest/members/{0}">
+		                		<f:param value="#{_member.id}"/>
+		                	</h:outputFormat>
+	                </h:outputLink>
+	            </p:column>
+	            <p:column width="60" headerText="Tp Pessoa" style="text-align:center;">
+	            		<h:outputText value="#{_member.tpMember}"/>                
+	            </p:column>
+	            <p:column width="25">
+		            <p:rowEditor />
+	            </p:column>
+	            <p:column width="30">
+		             <p:commandButton icon="ui-icon-star" update=":form:dtClientes" action="#{memberController.delMember}" 
+		             title="Inativar / Ativar cliente" ajax="true">
+		                <f:setPropertyActionListener value="#{_member}" target="#{memberController.currMember}" />
+		            </p:commandButton>
+	            </p:column>
+	            <f:facet name="footer">
+	            URL REST para todos clientes: <a
+	                    href="#{request.contextPath}/rest/members">/rest/members</a>
+	            </f:facet>
+	        </p:dataTable>
+	        <p>
+	            <p:button value="Incluir" icon="ui-icon-disk" title="Adicionar Clientes" outcome="/AddMember"/>
+	        </p>
+		</h:form>
+    </ui:define>
+</ui:composition>

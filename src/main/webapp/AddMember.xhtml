@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/templates/default.xhtml" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:f="http://xmlns.jcp.org/jsf/core" 
+	xmlns:h="http://xmlns.jcp.org/jsf/html" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="titulo">Adicionar Clientes</ui:define>
+	
+	<ui:define name="content">
+		<h2>Adicionar Clientes</h2>
+
+        <h:form>
+            <h3>Manutenção de Clientes</h3>
+<!--             <p>Enforces annotation-based constraints defined on the -->
+<!--                 model class.</p> -->
+            <h:panelGrid columns="3" columnClasses="titleCell">
+                <p:outputLabel for="name" value="Nome:" />
+                <p:inputText id="name" value="#{newMember.name}" />
+                <p:message for="name" errorClass="invalid" />
+
+                <p:outputLabel for="email" value="Email:" />
+                <p:inputText id="email" value="#{newMember.email}" />
+                <p:message for="email" errorClass="invalid" />
+
+                <p:outputLabel for="phoneNumber" value="Fone #:" />
+                <p:inputText id="phoneNumber"
+                    value="#{newMember.phoneNumber}" />
+                <p:message for="phoneNumber" errorClass="invalid" />
+
+                <p:outputLabel for="tpMember" value="Tp Pessoa:"/>
+                <p:selectOneRadio id="tpMember" value="#{newMember.tpMember}">
+                		<f:selectItems 
+                			value="#{memberController.typesMember}"
+                			var="typeMember"
+                			itemValue="#{typeMember}"
+                			itemLabel="#{typeMember.descricao}"/>
+                </p:selectOneRadio>
+                <p:message for="tpMember" errorClass="invalid" />
+            </h:panelGrid>
+            <p>
+                <h:panelGrid columns="2">
+                    <p:commandButton id="register"
+                        action="#{memberController.register}"
+                        value="Salvar" 
+                        styleClass="register"
+                        icon="ui-icon-disk"
+                        update="@form" />
+                    <p:button id="backToIndex"
+                    		outcome="/index?faces-redirect=true"
+                        value="Voltar" 
+                        styleClass="register"
+                        icon="ui-icon-back"
+                        update="@form" />
+                    <p:messages autoUpdate="true" styleClass="messages"
+                        errorClass="invalid" infoClass="valid"
+                        warnClass="warning" globalOnly="true" />
+                </h:panelGrid>
+            </p>
+        </h:form>
+	</ui:define>	
+</ui:composition>

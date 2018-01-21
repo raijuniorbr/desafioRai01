@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+	==============================================================================================
+	Data: 	20/01/2017
+	Autor: 	Rai
+	Descr:	Tela default de login para a aplicação
+	
+			User: admin
+			Pass: im2018
+
+	==============================================================================================
+-->
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    template="/WEB-INF/templates/default.xhtml"
+    xmlns:p="http://primefaces.org/ui">
+    <ui:define name="content">
+    		<h1>Desafio Iron Mountain</h1>
+        <h2>Login</h2>
+        <h:form id="form">
+			<p:messages autoUpdate="true" />
+			<h:panelGrid columns="2"> 
+				<p:outputLabel value="Usuário" for="usuario" /> 
+				<p:inputText id="usuario" size="20" value="#{ironUserController.userName}" /> 
+				<p:outputLabel value="Senha" for="senha" />
+				<p:password id="senha" size="20" value="#{ironUserController.userPass}" />
+				<p:outputLabel /> 
+				<p:commandButton value="Acessar" action="#{ironUserController.login}" /> 
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
