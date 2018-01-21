@@ -23,7 +23,7 @@ public class FilterAuth implements Filter {
 	
 	/*
 	 * Injeção de Dependência para Usário
-	 * --> Traz a informação da memória
+	 * --> Traz a informação da memória ...
 	 */
 	@Inject
 	private IronUser ironUser;
