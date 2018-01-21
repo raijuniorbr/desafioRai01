@@ -18,6 +18,10 @@ import br.com.ironMountain.desafioRai01.model.IronUser;
 /**
  * Servlet Filter implementation class FilterAuth
  */
+
+/*
+ * para todas as URLs do projeto
+ */
 @WebFilter("/*")
 public class FilterAuth implements Filter {
 	
