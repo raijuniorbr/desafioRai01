@@ -2,8 +2,8 @@
  * 
  * Classe para controlar usuários
  * 
- * @author		Rai Braga
- * @version 		2018-01-20
+ * @author	Rai Braga
+ * @version 	2018-01-20
  * 
  */
 
