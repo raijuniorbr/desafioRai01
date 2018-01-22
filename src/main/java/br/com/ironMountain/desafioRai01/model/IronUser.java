@@ -1,10 +1,13 @@
 /*****
-*	==============================================================================================
-*	Data: 	20/01/2017
-*	Autor: 	Rai
-*	Edição:	Classe do Usuário da Aplicação
-*	==============================================================================================
+ * 
+ * Classe do usuário de aplicação
+ * 
+ * @author	Rai Braga
+ * @version	20/01/2017
+ * 
+ * 
  */
+
 package br.com.ironMountain.desafioRai01.model;
 
 import java.io.Serializable;

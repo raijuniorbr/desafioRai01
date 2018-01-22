@@ -1,12 +1,4 @@
 /****
-	==============================================================================================
-	Data: 	20/01/2017
-	Autor: 	Rai
-	Edição:	Este arquivo foi gerado automatiamente pelo Template WildFly encontrado no Maven
-			Modificado para atender especificação do DESAFIO IMB-desafio-tecnico.pdf
-
-	==============================================================================================
-
  * JBoss, Home of Professional Open Source
  * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
@@ -21,6 +13,13 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * 
+ * Este arquivo foi gerado automatiamente pelo Template WildFly encontrado no Maven
+ * Modificado para atender especificação do DESAFIO IMB-desafio-tecnico.pdf
+ * 
+ * @author	Rai Braga
+ * @version	20/01/2017
+ * 
  */
 package br.com.ironMountain.desafioRai01.model;
 
@@ -46,8 +45,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 @SuppressWarnings("serial")
 @Entity
 @XmlRootElement
+/***
+ * A constraint ou bean validation define que não podem haver emails repetidos
+ * 
+ */
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-// A constraint ou bean validation acima define que não podem haver emails repetidos
 public class Member implements Serializable {
 
     @Id

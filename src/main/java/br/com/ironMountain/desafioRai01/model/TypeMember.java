@@ -1,7 +1,10 @@
-/*******
- * 2018-01-20
- * Autor:	Rai
- * Descr:	Enumeração para Tipos de Clientes
+/*****
+ * 
+ * Enumeração para Tipos de Clientes
+ * 
+ * @author	Rai Braga
+ * @version	20/01/2017
+ * 
  * 
  */
 package br.com.ironMountain.desafioRai01.model;

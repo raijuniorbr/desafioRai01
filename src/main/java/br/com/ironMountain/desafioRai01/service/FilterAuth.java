@@ -1,10 +1,11 @@
 /*******
  * 
- * 2018-01-20
- * Autor:	Rai
- * Descr:	Filtro para limitar o acesso às páginas da aplicação
- * 			Qualquw URL que for digitada irá para Login.xhtml em caso de não estar
- * 			devidamente autenticado
+ * Filtro para limitar o acesso às páginas da aplicação
+ * Qualquw URL que for digitada irá para Login.xhtml em caso de não estar
+ * devidamente autenticado
+ * 
+ * @author	Rai Braga
+ * @version 	2018-01-20
  * 
  */
 package br.com.ironMountain.desafioRai01.service;

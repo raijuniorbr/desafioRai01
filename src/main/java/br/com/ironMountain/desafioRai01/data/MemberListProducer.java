@@ -1,10 +1,5 @@
 
  /*******
- * 2018-01-20
- * Autor:	Rai
- * Descr:	
- * 
- *
  * JBoss, Home of Professional Open Source
  * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
@@ -19,6 +14,11 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ * 
+ * 
+ * @auhor		Rai Braga
+ * @version		20/01/2018
+ * 
  */
 package br.com.ironMountain.desafioRai01.data;
 
